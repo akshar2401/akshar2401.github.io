@@ -4,7 +4,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: __dirname,
-        filename: "portfolio.js"
+        filename: "[name].portfolio.js"
     },
     plugins: [
         new HtmlWebPackPlugin({

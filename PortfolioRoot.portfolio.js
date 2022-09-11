@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[367],{516:(e,t,n)=>{n.r(t),n.d(t,{default:()=>l});var u=n(294);const l=function(e){return u.createElement("h1",null,"PortFolio Root")}}}]);

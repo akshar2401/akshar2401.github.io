@@ -8,6 +8,8 @@
     "serve": "webpack serve --hot --no-client-overlay-warnings"
   },
   "devDependencies": {
+    "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.7.1",
     "ts-loader": "^9.3.1",
