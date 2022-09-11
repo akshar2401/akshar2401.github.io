@@ -1,26 +1,28 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-module.exports = {
-    mode: "production",
+module.exports = (env) => {
+  return {
+    mode: env.mode,
     entry: "./src/index.tsx",
     output: {
-        path: __dirname,
-        filename: "[name].portfolio.js"
+      path: __dirname,
+      filename: "[name].portfolio.js",
     },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: "./index.html"
-        })
+      new HtmlWebPackPlugin({
+        template: "./index.html",
+      }),
     ],
     module: {
-        rules: [
-          {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-          },
-        ],
-      },
-      resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-      },
-}
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: "ts-loader",
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    resolve: {
+      extensions: [".tsx", ".ts", ".js"],
+    },
+  };
+};

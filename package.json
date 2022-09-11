@@ -4,8 +4,8 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "build": "webpack",
-    "serve": "webpack serve --hot --no-client-overlay-warnings"
+    "build": "webpack --env mode=production",
+    "serve": "webpack serve --env mode=development --hot --no-client-overlay-warnings"
   },
   "devDependencies": {
     "@types/react": "^18.0.19",

@@ -1,9 +1,15 @@
 import * as React from "react";
 
+const Navigation = React.lazy(
+  () => import(/* webpackChunkName: "Navigation" */ "../Navigation/Navigation")
+);
+
 const PortfolioRoot: React.FC<any> = (props) => {
-    return (
-        <h1>PortFolio Root</h1>
-    );
+  return (
+    <React.Suspense>
+      <Navigation />
+    </React.Suspense>
+  );
 };
 
 export default PortfolioRoot;
