@@ -1,3 +1,3 @@
 export default class Constants {
-   static readonly PortfolioRootDivID = "portfolioRoot";
+  static readonly PortfolioRootDivID = "portfolioRoot";
 }

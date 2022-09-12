@@ -1,5 +1,11 @@
 import * as React from "react";
 import { NavbarItems } from "./Navbar.types";
+const DownloadResume = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "DownloadResume" */ "../DownloadResume/DownloadResume"
+    )
+);
 const defaultNavBarItems: NavbarItems = new NavbarItems([
   {
     name: "About",
@@ -65,6 +71,7 @@ const Navbar: React.FC<any> = (_) => {
             );
           })}
         </ul>
+        <DownloadResume />
       </div>
     </>
   );
