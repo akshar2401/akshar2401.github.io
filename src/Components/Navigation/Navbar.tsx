@@ -71,7 +71,9 @@ const Navbar: React.FC<any> = (_) => {
             );
           })}
         </ul>
-        <DownloadResume />
+        <React.Suspense>
+          <DownloadResume />
+        </React.Suspense>
       </div>
     </>
   );
