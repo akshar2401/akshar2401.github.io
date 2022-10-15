@@ -9,7 +9,8 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebPackPlugin({
-        template: "./index.html",
+        template: "./template.html",
+        filename: "./index.html",
       }),
     ],
     module: {

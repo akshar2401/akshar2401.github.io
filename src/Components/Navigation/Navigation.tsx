@@ -1,20 +1,23 @@
 import * as React from "react";
+import {
+  Navbar as BootstrapNavbar,
+  Container,
+} from "../../../node_modules/react-bootstrap/esm/index";
+
 const Navbar = React.lazy(
   () => import(/* webpackChunkName: "Navbar" */ "./Navbar")
 );
 
 const Navigation: React.FC<any> = (_) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Portfolio
-        </a>
+    <BootstrapNavbar expand="lg" bg="dark" variant="dark" fixed="top">
+      <Container fluid={true}>
+        <BootstrapNavbar.Brand>Portfolio</BootstrapNavbar.Brand>
         <React.Suspense>
           <Navbar />
         </React.Suspense>
-      </div>
-    </nav>
+      </Container>
+    </BootstrapNavbar>
   );
 };
 

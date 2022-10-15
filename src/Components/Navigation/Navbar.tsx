@@ -1,80 +1,47 @@
 import * as React from "react";
-import { NavbarItems } from "./Navbar.types";
+import { DefaultNavBarItems } from "./Navbar.Constants";
+import {
+  Navbar as BootstrapNavbar,
+  Nav,
+} from "../../../node_modules/react-bootstrap/esm/index";
+
 const DownloadResume = React.lazy(
   () =>
     import(
       /* webpackChunkName: "DownloadResume" */ "../DownloadResume/DownloadResume"
     )
 );
-const defaultNavBarItems: NavbarItems = new NavbarItems([
-  {
-    name: "About",
-    isActive: true,
-  },
-  {
-    name: "Education",
-  },
-  {
-    name: "Skills",
-  },
-  {
-    name: "Work Experience",
-  },
-  {
-    name: "Projects",
-  },
-]);
-const Navbar: React.FC<any> = (_) => {
-  const [navbarItems, updateNavBarItems] = React.useState(defaultNavBarItems);
 
-  const handleNavbarItemClick = (activeToBeIndex: number) => {
-    const currentActiveIndex = navbarItems.navBarItems.findIndex(
-      (item) => item.isActive
-    );
-    if (currentActiveIndex !== -1) {
-      navbarItems.navBarItems[currentActiveIndex].isActive = false;
-    }
-    navbarItems.navBarItems[activeToBeIndex].isActive = true;
-    updateNavBarItems(new NavbarItems(navbarItems.navBarItems));
-  };
+const Navbar: React.FC<any> = (_) => {
+  const [currentActiveIndex, updateActiveIndex] = React.useState(0);
 
   return (
     <>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          {navbarItems.navBarItems.map((navbarItem, currentIndex) => {
-            const navItemTextClasses = navbarItem.isActive
-              ? "nav-link active"
-              : "nav-link";
+      <BootstrapNavbar.Toggle aria-controls="collpase" />
+      <BootstrapNavbar.Collapse id="collapse" role={""}>
+        <Nav className="me-auto mb-2 mb-lg-0" navbarScroll>
+          {DefaultNavBarItems.map((navbarItem, currentIndex) => {
             return (
-              <li
-                className="nav-item"
+              <Nav.Item
                 key={navbarItem.name}
                 style={{ cursor: "pointer" }}
-                onClick={() => handleNavbarItemClick(currentIndex)}
+                onClick={() => updateActiveIndex(currentIndex)}
               >
-                <span className={navItemTextClasses} aria-current="page">
+                <Nav.Link
+                  as="span"
+                  active={currentActiveIndex === currentIndex}
+                  aria-current="page"
+                >
                   {navbarItem.name}
-                </span>
-              </li>
+                </Nav.Link>
+              </Nav.Item>
             );
           })}
-        </ul>
+        </Nav>
         <React.Suspense>
           <DownloadResume />
         </React.Suspense>
-      </div>
+      </BootstrapNavbar.Collapse>
     </>
   );
 };
