@@ -17,7 +17,7 @@ const Navbar: React.FC<any> = (_) => {
 
   return (
     <>
-      <BootstrapNavbar.Toggle aria-controls="collpase" />
+      <BootstrapNavbar.Toggle aria-controls="collapse" />
       <BootstrapNavbar.Collapse id="collapse" role={""}>
         <Nav className="me-auto mb-2 mb-lg-0" navbarScroll>
           {DefaultNavBarItems.map((navbarItem, currentIndex) => {

@@ -8,6 +8,7 @@ import Constants from "../../Constants";
 const styles = {
   paddingTop: "10px",
   paddingBottom: "10px",
+  marginTop: "50px",
 };
 
 const paddingIconColStyles = {
@@ -21,14 +22,14 @@ const icons: IConLink[] = [
   },
   {
     icon: "fa fa-linkedin",
-    link: "https://www.linkedin.com/in/akshar-patel-378071122/",
+    link: Constants.LinkedinURL,
   },
-  { icon: "fa fa-github", link: "https://github.com/akshar2401" },
+  { icon: "fa fa-github", link: Constants.GithubURL },
 ];
 
 const Footer: React.FC<any> = () => {
   return (
-    <footer className="fixed-bottom bg-dark text-light" style={styles}>
+    <footer className="text-light" style={styles}>
       <Container fluid>
         <Row className="justify-content-center">
           {icons.map((icon) => (

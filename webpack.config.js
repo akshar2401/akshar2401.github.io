@@ -24,6 +24,10 @@ module.exports = (env) => {
           test: /\.pdf$/,
           use: "file-loader",
         },
+        {
+          test: /\.jpeg$/,
+          use: "file-loader",
+        },
       ],
     },
     resolve: {
