@@ -3,14 +3,20 @@ import Container from "../../../node_modules/react-bootstrap/esm/Container";
 import Row from "../../../node_modules/react-bootstrap/esm/Row";
 import Col from "../../../node_modules/react-bootstrap/esm/Col";
 import Constants from "../../Constants";
-import ImagesCarousel from "../ImagesCarousel/ImagesCarousel";
 import ImagesForCarousel from "./ImagesForCarousel";
+
+const ImagesCarousel = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "ImagesCarousel" */ "../ImagesCarousel/ImagesCarousel"
+    )
+);
 
 const About: React.FC<any> = () => {
   return (
     <Container
       className="mt-3"
-      style={{ width: "80%" }}
+      style={{ width: "90%" }}
       id={Constants.AboutContainerId}
     >
       <Row className="text-light justify-content-lg-between">
@@ -94,7 +100,9 @@ const About: React.FC<any> = () => {
           lg={{ span: 5 }}
           className="mx-auto my-auto"
         >
-          <ImagesCarousel images={ImagesForCarousel}></ImagesCarousel>
+          <React.Suspense>
+            <ImagesCarousel images={ImagesForCarousel}></ImagesCarousel>
+          </React.Suspense>
         </Col>
       </Row>
     </Container>
