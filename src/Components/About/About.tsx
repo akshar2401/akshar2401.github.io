@@ -23,7 +23,7 @@ const About: React.FC<any> = () => {
         <Col
           xs={{ span: 12, offset: 0 }}
           lg={{ span: 6 }}
-          className="mx-auto my-auto pb-4"
+          className="mx-auto my-auto pt-2 pb-2"
         >
           <h3>Hello, Akshar here!</h3>
           <p style={{ lineHeight: "1.8rem" }}>

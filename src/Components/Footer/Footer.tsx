@@ -6,9 +6,8 @@ import { IConLink } from "./Footer.types";
 import Constants from "../../Constants";
 
 const styles = {
-  paddingTop: "10px",
-  paddingBottom: "10px",
-  marginTop: "50px",
+  marginTop: "60px",
+  "--bs-border-opacity": ".15",
 };
 
 const paddingIconColStyles = {
@@ -29,9 +28,12 @@ const icons: IConLink[] = [
 
 const Footer: React.FC<any> = () => {
   return (
-    <footer className="text-light" style={styles}>
+    <footer
+      className="text-light border-top border-light flex-grow-1 d-flex align-items-center py-3"
+      style={styles}
+    >
       <Container fluid>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center my-auto">
           {icons.map((icon) => (
             <Col xs="auto" style={paddingIconColStyles} key={icon.icon}>
               <a href={icon.link} target="_blank" rel="noopener noreferrer">

@@ -9,9 +9,8 @@ const PortfolioRoot = React.lazy(
     )
 );
 
-const root = ReactDOM.createRoot(
-  document.getElementById(Constants.PortfolioRootDivID)
-);
+const rootDomElement = document.getElementById(Constants.PortfolioRootDivID);
+const root = ReactDOM.createRoot(rootDomElement);
 root.render(
   <React.Suspense>
     <PortfolioRoot />
