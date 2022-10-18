@@ -7,6 +7,8 @@ export default class Utilities {
     const linkHTMLElement = document.createElement("a");
     linkHTMLElement.href = downloadFileUrl;
     linkHTMLElement.download = fileName;
+    document.body.appendChild(linkHTMLElement);
     linkHTMLElement.click();
+    document.body.removeChild(linkHTMLElement);
   }
 }
