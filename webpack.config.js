@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const SetUp404Plugin = require("./webpack/SetUp404Plugin");
 module.exports = (env) => {
   return {
     mode: env.mode,
@@ -12,6 +13,7 @@ module.exports = (env) => {
         template: "./template.html",
         filename: "./index.html",
       }),
+      new SetUp404Plugin(),
     ],
     module: {
       rules: [
