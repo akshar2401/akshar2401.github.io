@@ -24,6 +24,10 @@ const DefaultPage = React.lazy(
     )
 );
 
+const Education = React.lazy(
+  () => import(/* webpackChunkName: "Education" */ "../Education/Education")
+);
+
 const PortfolioRoot: React.FC<any> = () => {
   return (
     <React.Suspense>
@@ -39,6 +43,7 @@ const PortfolioRoot: React.FC<any> = () => {
               </React.Suspense>
             }
           />
+
           <Route
             path="*"
             element={

@@ -8,7 +8,7 @@
     "react-router-dom": "^6.4.2"
   },
   "scripts": {
-    "build": "node ./scripts/ScrubBuildFiles.js & webpack --env mode=production",
+    "build": "webpack --env mode=production",
     "serve": "webpack serve --env mode=development --hot --no-client-overlay-warnings"
   },
   "devDependencies": {
