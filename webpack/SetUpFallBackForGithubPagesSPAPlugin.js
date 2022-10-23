@@ -8,12 +8,15 @@ class SetUpFallBackForGithubPagesSPAPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.assetEmitted.tap("SetUp404Plugin", (file, info) => {
-      if (typeof file === "string" && file.includes("index.html")) {
-        const pathTo404 = path.join(info.outputPath, this.fallbackFileName);
-        fileSystem.writeFileSync(pathTo404, info.content);
+    compiler.hooks.assetEmitted.tap(
+      "SetUpFallBackForGithubPagesSPAPlugin",
+      (file, info) => {
+        if (typeof file === "string" && file.includes("index.html")) {
+          const pathTo404 = path.join(info.outputPath, this.fallbackFileName);
+          fileSystem.writeFileSync(pathTo404, info.content);
+        }
       }
-    });
+    );
   }
 }
 

@@ -10,7 +10,7 @@ const images: CarouselImage[] = [
   },
   {
     src: SecondImage,
-    alt: "Akshar's first image",
+    alt: "Akshar's second image",
     classes: "d-block w-100 h-100",
   },
 ];
