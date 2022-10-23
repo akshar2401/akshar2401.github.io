@@ -15,7 +15,7 @@ const ImagesCarousel = React.lazy(
 const About: React.FC<any> = () => {
   return (
     <Container
-      className="mt-3"
+      className="mt-3 flex-grow-1"
       style={{ width: "90%" }}
       id={Constants.AboutContainerId}
     >

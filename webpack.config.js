@@ -15,6 +15,9 @@ module.exports = (env) => {
       }),
       new SetUp404Plugin(),
     ],
+    devServer: {
+      historyApiFallback: true,
+    },
     module: {
       rules: [
         {

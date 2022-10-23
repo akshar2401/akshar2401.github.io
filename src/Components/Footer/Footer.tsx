@@ -29,7 +29,7 @@ const icons: IConLink[] = [
 const Footer: React.FC<any> = () => {
   return (
     <footer
-      className="text-light border-top border-light flex-grow-1 d-flex align-items-center py-3"
+      className="text-light border-top border-light d-flex align-items-center py-3"
       style={styles}
     >
       <Container fluid>

@@ -4,6 +4,7 @@ import {
   Navbar as BootstrapNavbar,
   Nav,
 } from "../../../node_modules/react-bootstrap/esm/index";
+import { Link, useLocation } from "react-router-dom";
 
 const DownloadResume = React.lazy(
   () =>
@@ -13,28 +14,29 @@ const DownloadResume = React.lazy(
 );
 
 const Navbar: React.FC<any> = (_) => {
-  const [currentActiveIndex, updateActiveIndex] = React.useState(0);
-
+  const location = useLocation();
   return (
     <>
       <BootstrapNavbar.Toggle aria-controls="collapse" />
       <BootstrapNavbar.Collapse id="collapse" role={""}>
         <Nav className="me-auto mb-2 mb-lg-0" navbarScroll>
-          {DefaultNavBarItems.map((navbarItem, currentIndex) => {
+          {DefaultNavBarItems.map((navbarItem) => {
             return (
-              <Nav.Item
+              <Link
+                to={navbarItem.route}
+                style={{ textDecoration: "none" }}
                 key={navbarItem.name}
-                style={{ cursor: "pointer" }}
-                onClick={() => updateActiveIndex(currentIndex)}
               >
-                <Nav.Link
-                  as="span"
-                  active={currentActiveIndex === currentIndex}
-                  aria-current="page"
-                >
-                  {navbarItem.name}
-                </Nav.Link>
-              </Nav.Item>
+                <Nav.Item style={{ cursor: "pointer" }}>
+                  <Nav.Link
+                    as="span"
+                    active={location.pathname === navbarItem.route}
+                    aria-current="page"
+                  >
+                    {navbarItem.name}
+                  </Nav.Link>
+                </Nav.Item>
+              </Link>
             );
           })}
         </Nav>

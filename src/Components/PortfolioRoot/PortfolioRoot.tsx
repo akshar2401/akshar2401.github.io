@@ -1,6 +1,9 @@
 import * as React from "react";
 import { Route } from "../../../node_modules/react-router/dist/index";
-import { Routes } from "../../../node_modules/react-router-dom/dist/index";
+import {
+  BrowserRouter,
+  Routes,
+} from "../../../node_modules/react-router-dom/dist/index";
 
 const Navigation = React.lazy(
   () => import(/* webpackChunkName: "Navigation" */ "../Navigation/Navigation")
@@ -14,36 +17,39 @@ const About = React.lazy(
   () => import(/* webpackChunkName: "About" */ "../About/About")
 );
 
-const PageNotFound = React.lazy(
+const DefaultPage = React.lazy(
   () =>
     import(
-      /* webpackChunkName: "PageNotFound" */ "../PageNotFound/PageNotFound"
+      /* webpackChunkName: "DefaultPage" */ "../DefaultComponents/DefaultPage"
     )
 );
 
-const PortfolioRoot: React.FC<any> = (props) => {
+const PortfolioRoot: React.FC<any> = () => {
   return (
     <React.Suspense>
-      <Navigation />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <React.Suspense>
-              <About />
-            </React.Suspense>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <React.Suspense>
-              <PageNotFound />
-            </React.Suspense>
-          }
-        />
-      </Routes>
-      <Footer />
+      <BrowserRouter>
+        <Navigation />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <React.Suspense>
+                <About />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <React.Suspense>
+                <DefaultPage />
+              </React.Suspense>
+            }
+          />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </React.Suspense>
   );
 };
