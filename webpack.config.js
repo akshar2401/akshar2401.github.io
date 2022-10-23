@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const SetUp404Plugin = require("./webpack/SetUp404Plugin");
+const SetUpFallBackForGithubPagesSPAPlugin = require("./webpack/SetUpFallBackForGithubPagesSPAPlugin");
 module.exports = (env) => {
   return {
     mode: env.mode,
@@ -13,7 +13,7 @@ module.exports = (env) => {
         template: "./template.html",
         filename: "./index.html",
       }),
-      new SetUp404Plugin(),
+      new SetUpFallBackForGithubPagesSPAPlugin(),
     ],
     devServer: {
       historyApiFallback: true,

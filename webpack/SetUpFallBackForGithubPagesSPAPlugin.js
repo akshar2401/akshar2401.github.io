@@ -2,15 +2,19 @@ const fileSystem = require("fs");
 const path = require("path");
 const FallbackFileName = "404.html";
 
-class SetUp404Plugin {
+class SetUpFallBackForGithubPagesSPAPlugin {
+  constructor(fallbackFileName = FallbackFileName) {
+    this.fallbackFileName = fallbackFileName;
+  }
+
   apply(compiler) {
     compiler.hooks.assetEmitted.tap("SetUp404Plugin", (file, info) => {
       if (typeof file === "string" && file.includes("index.html")) {
-        const pathTo404 = path.join(info.outputPath, FallbackFileName);
+        const pathTo404 = path.join(info.outputPath, this.fallbackFileName);
         fileSystem.writeFileSync(pathTo404, info.content);
       }
     });
   }
 }
 
-module.exports = SetUp404Plugin;
+module.exports = SetUpFallBackForGithubPagesSPAPlugin;
