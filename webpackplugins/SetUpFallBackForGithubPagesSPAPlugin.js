@@ -12,8 +12,11 @@ class SetUpFallBackForGithubPagesSPAPlugin {
       "SetUpFallBackForGithubPagesSPAPlugin",
       (file, info) => {
         if (typeof file === "string" && file.includes("index.html")) {
-          const pathTo404 = path.join(info.outputPath, this.fallbackFileName);
-          fileSystem.writeFileSync(pathTo404, info.content);
+          const pathToFallbackFile = path.join(
+            info.outputPath,
+            this.fallbackFileName
+          );
+          fileSystem.writeFileSync(pathToFallbackFile, info.content);
         }
       }
     );

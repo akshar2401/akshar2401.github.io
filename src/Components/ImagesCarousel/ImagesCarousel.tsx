@@ -7,16 +7,14 @@ import { ImagesCarouselProps } from "./ImagesCoursel.types";
 
 const ImagesCarousel: React.FC<ImagesCarouselProps> = (props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
-
   if (!props.images || props.images.length === 0) {
     return null;
   }
-
   return (
     <Carousel
       activeIndex={activeIndex}
-      onSelect={(index, e) => setActiveIndex(index)}
-      style={{ height: "400px" }}
+      onSelect={setActiveIndex}
+      style={Object.assign({}, { height: "400px" }, props.imageStyles || {})}
     >
       {props.images.map((image) => {
         return (

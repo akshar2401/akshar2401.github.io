@@ -59,7 +59,7 @@ const About: React.FC<any> = () => {
             and experiences for Microsoft Power Platform and Power Apps. My
             recent technology stack includes C#, React, Typescript, Javascript,
             Redux, VSCode Extension, Language Server Protocol, Language Servers,
-            Node, PowerFx, Compilers.
+            NodeJS, PowerFx, Compilers.
             <br /> <br />I am highly passionate about compiler theory and study
             and work on them in my free time. I've also worked in many different
             areas of technology such as Machine Learning, Full Stack

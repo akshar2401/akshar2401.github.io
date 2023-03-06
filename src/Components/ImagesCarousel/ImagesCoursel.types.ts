@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export interface CarouselImage {
   src: string;
   alt: string;
@@ -7,4 +9,5 @@ export interface CarouselImage {
 
 export interface ImagesCarouselProps {
   images: CarouselImage[];
+  imageStyles?: React.CSSProperties;
 }

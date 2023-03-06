@@ -25,18 +25,21 @@ class ScrubOldBuildFilesPlugin {
       const entries = fileSystem.readdirSync(rootDir, {
         withFileTypes: true,
       });
-      let count = 0;
+      const deletedFiles = [];
       entries.forEach((entry) => {
         if (
           entry.isFile() &&
           !this.filesNotToScrub.includes(path.parse(entry.name).base)
         ) {
           fileSystem.rmSync(entry.name);
-          count++;
+          deletedFiles.push(entry.name);
         }
       });
 
-      console.log(`Deleted ${count} build files`);
+      console.log(`Deleted ${deletedFiles.length} build files`);
+      for (const deletedFile of deletedFiles) {
+        console.log(deletedFile);
+      }
     });
   }
 }
