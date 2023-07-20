@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   Routes,
 } from "../../../node_modules/react-router-dom/dist/index";
+import Skills from "../Skills/Skills";
 
 const Navigation = React.lazy(
   () => import(/* webpackChunkName: "Navigation" */ "../Navigation/Navigation")
@@ -43,6 +44,8 @@ const PortfolioRoot: React.FC<any> = () => {
               </React.Suspense>
             }
           />
+
+          <Route path="/skills" element={<Skills />} />
 
           <Route
             path="*"
