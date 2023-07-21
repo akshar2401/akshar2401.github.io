@@ -2,7 +2,7 @@ import * as React from "react";
 import { LazyLoad } from "../CommonComponents";
 
 const LazySkills = React.lazy(
-  () => import(/* webpackChunkName: "Skills"*/ "./SkillsInternal")
+  () => import(/* webpackChunkName: "SKills"*/ "./SkillsInternal")
 );
 
 const Skills: React.FC<any> = () => {
