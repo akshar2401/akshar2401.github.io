@@ -4,5 +4,6 @@
         "target": "es2015",
         "module": "esnext",
         "sourceMap": true,
+        "moduleResolution": "node"
     }
 }

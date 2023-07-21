@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[397],{9553:(e,t,a)=>{a.r(t),a.d(t,{default:()=>c});var s=a(7294);const c=()=>s.createElement("h1",{className:"text-light"},"Education")}}]);

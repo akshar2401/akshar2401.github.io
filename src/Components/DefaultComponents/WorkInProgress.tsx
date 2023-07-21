@@ -1,25 +1,15 @@
 import * as React from "react";
-import DefaultPageContent from "./DefaultPageContent";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
-import { DefaultNavBarItems } from "../Navigation/Navbar.Constants";
+import { LazyLoad } from "../CommonComponents";
 
-const WorkInProgressComponent: React.FC<any> = () => {
-  const location = useLocation();
-  const pathName = DefaultNavBarItems.find(
-    (navItem) => navItem.route === location.pathname
-  );
+const LazyWorkInProgressComponent = React.lazy(
+  () =>
+    import(/* webpackChunkName: "WorkInProgress" */ "./WorkInProgressInternal")
+);
+
+export const WorkInProgressComponent: React.FC<any> = () => {
   return (
-    <DefaultPageContent>
-      <p className="text-center">
-        {pathName?.name ?? "This"} page is currently work in progress. Please
-        come back later. Until then, explore my home page{" "}
-        <Link to="/" className="text-light">
-          here
-        </Link>
-      </p>
-    </DefaultPageContent>
+    <LazyLoad>
+      <LazyWorkInProgressComponent />
+    </LazyLoad>
   );
 };
-
-export default WorkInProgressComponent;

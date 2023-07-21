@@ -1,6 +1,6 @@
 import FirstImage from "../../../images/Akshar1.jpeg";
 import SecondImage from "../../../images/Akshar2.jpeg";
-import { CarouselImage } from "../ImagesCarousel/ImagesCoursel.types";
+import { CarouselImage } from "../ImagesCarousel";
 
 const images: CarouselImage[] = [
   {

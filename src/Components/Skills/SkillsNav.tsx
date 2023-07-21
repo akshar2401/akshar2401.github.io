@@ -1,4 +1,5 @@
 import * as React from "react";
+import { LazyLoad } from "../CommonComponents";
 
 const LazySkillsNav = React.lazy(
   () => import(/* webpackChunkName: "SkillsNav" */ "./SkillsNavInternal")
@@ -6,9 +7,9 @@ const LazySkillsNav = React.lazy(
 
 const SkillsNav: React.FC<any> = () => {
   return (
-    <React.Suspense>
+    <LazyLoad>
       <LazySkillsNav />
-    </React.Suspense>
+    </LazyLoad>
   );
 };
 export default SkillsNav;

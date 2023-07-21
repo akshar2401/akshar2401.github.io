@@ -1,6 +1,6 @@
 import type { INavbarItem } from "./Navbar.types";
 
-export const DefaultNavBarItems: INavbarItem[] = [
+export const DefaultNavBarItems: ReadonlyArray<INavbarItem> = [
   {
     name: "About",
     route: "/",

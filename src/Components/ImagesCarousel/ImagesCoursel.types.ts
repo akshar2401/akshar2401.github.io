@@ -11,3 +11,5 @@ export interface ImagesCarouselProps {
   images: CarouselImage[];
   imageStyles?: React.CSSProperties;
 }
+
+export type ImagesCarouselInternalComponentType = React.FC<ImagesCarouselProps>;
