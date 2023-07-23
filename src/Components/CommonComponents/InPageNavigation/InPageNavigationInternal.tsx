@@ -13,6 +13,9 @@ const InPageNavigationInternal: InPageNavigationInternalComponent = (props) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const toggleExpanded = React.useCallback(() => {
+    if (!props.useExpandCollapse) {
+      return;
+    }
     setIsExpanded((isExpanded) => !isExpanded);
   }, []);
 
@@ -70,6 +73,7 @@ const InPageNavigationInternal: InPageNavigationInternalComponent = (props) => {
       <Card bg="dark" text="light" style={{ width: "100%" }}>
         <Card.Header
           className="d-flex align-items-center justify-content-between"
+          onClick={toggleExpanded}
           style={{ cursor: "pointer" }}
         >
           {props.header}
@@ -95,13 +99,11 @@ function getExpandCollapseIcon(
       {isExpanded ? (
         <i
           className="fa fa-solid fa-chevron-up"
-          onClick={toggleExpanded}
           style={{ cursor: "pointer" }}
         />
       ) : (
         <i
           className="fa fa-solid fa-chevron-down"
-          onClick={toggleExpanded}
           style={{ cursor: "pointer" }}
         />
       )}
