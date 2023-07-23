@@ -1,7 +1,10 @@
+import Resume from "../../Resume.pdf";
+
 export default class Constants {
   static readonly PortfolioRootDivID = "portfolioRoot";
   static readonly ResumeFileName = "AksharResume.pdf";
   static readonly Email = "aksharpatel144@gmail.com";
+  static readonly ResumeUrl = Resume;
   static readonly AboutContainerId = "aboutContainer";
   static readonly SkillsContainerColumnId = "skillsContainerColumn";
   static readonly LinkedinURL =

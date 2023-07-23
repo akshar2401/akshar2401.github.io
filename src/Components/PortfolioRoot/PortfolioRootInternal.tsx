@@ -7,7 +7,7 @@ import { DefaultPage } from "../DefaultComponents";
 import { Navigation } from "../Navigation";
 import { Footer } from "../Footer";
 import { LazyLoad } from "../CommonComponents";
-import { AutoDownloadResume } from "../DownloadResume";
+import { Shortcut, Shortcuts } from "../ShortCuts";
 
 const PortfolioRootInternal: React.FC<any> = () => {
   return (
@@ -19,7 +19,13 @@ const PortfolioRootInternal: React.FC<any> = () => {
 
           <Route path="/skills" element={<Skills />} />
 
-          <Route path="/resume" element={<AutoDownloadResume />} />
+          {Shortcuts.map((shortcut) => (
+            <Route
+              path={shortcut.route}
+              key={shortcut.route}
+              element={<Shortcut shortcutType={shortcut.type} />}
+            />
+          ))}
 
           <Route path="*" element={<DefaultPage />} />
         </Routes>

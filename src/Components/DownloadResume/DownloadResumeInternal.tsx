@@ -1,10 +1,9 @@
 import * as React from "react";
-import Resume from "../../../Resume.pdf";
 import { Utilities, Constants } from "../../Misc";
 import { Button } from "../../../node_modules/react-bootstrap/esm/index";
 
 const downloadResume = async () => {
-  await Utilities.downloadFile(Resume, Constants.ResumeFileName);
+  await Utilities.downloadFile(Constants.ResumeUrl, Constants.ResumeFileName);
 };
 
 const DownloadResumeInternal: React.FC<any> = (_) => {
