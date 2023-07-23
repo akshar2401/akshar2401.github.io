@@ -7,6 +7,7 @@ import { DefaultPage } from "../DefaultComponents";
 import { Navigation } from "../Navigation";
 import { Footer } from "../Footer";
 import { LazyLoad } from "../CommonComponents";
+import { AutoDownloadResume } from "../DownloadResume";
 
 const PortfolioRootInternal: React.FC<any> = () => {
   return (
@@ -17,6 +18,8 @@ const PortfolioRootInternal: React.FC<any> = () => {
           <Route path="/" element={<About />} />
 
           <Route path="/skills" element={<Skills />} />
+
+          <Route path="/resume" element={<AutoDownloadResume />} />
 
           <Route path="*" element={<DefaultPage />} />
         </Routes>

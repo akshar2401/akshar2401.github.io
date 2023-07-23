@@ -1,3 +1,3 @@
 import { DefaultPage } from "./DefaultPage";
-
-export { DefaultPage };
+import DefaultPageContent from "./DefaultPageContent";
+export { DefaultPage, DefaultPageContent };

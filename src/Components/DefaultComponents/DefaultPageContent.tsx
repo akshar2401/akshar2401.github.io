@@ -5,7 +5,10 @@ import Col from "../../../node_modules/react-bootstrap/esm/Col";
 
 const DefaultPageContent: React.FC<{ children: any[] | any }> = (props) => {
   return (
-    <Container className="d-flex align-items-center flex-grow-1" fluid>
+    <Container
+      className="d-flex text-center align-items-center flex-grow-1"
+      fluid
+    >
       <Row className="justify-content-center w-100">
         <Col className="text-light" xs={12} style={{ fontSize: "25px" }}>
           {props.children}

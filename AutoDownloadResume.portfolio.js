@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[26],{272:(e,c,f)=>{f.d(c,{Z:()=>n});const n=f.p+"81c9d6b59cd4867b5abfffc004b8f035.pdf"},2242:(e,c,f)=>{f.r(c),f.d(c,{default:()=>a});var n=f(7294),s=f(272),t=f(727);const a=()=>(n.useEffect((()=>{window.location.replace(s.Z)}),[]),n.createElement(t.z,null,"Opening Resume..."))}}]);
