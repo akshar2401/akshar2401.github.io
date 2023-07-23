@@ -61,7 +61,6 @@ const InPageNavigationInternal: InPageNavigationInternalComponent = (props) => {
       BreakpointsEventManager.addListenerFor2ExtraLarge(expand),
     ];
     return () => {
-      console.log("disposing");
       subs.forEach((sub) => sub.dispose());
     };
   }, []);
@@ -100,7 +99,11 @@ function getExpandCollapseIcon(
           style={{ cursor: "pointer" }}
         />
       ) : (
-        <i className="fa fa-sloid fa-chevron-down" onClick={toggleExpanded} />
+        <i
+          className="fa fa-sloid fa-chevron-down"
+          onClick={toggleExpanded}
+          style={{ cursor: "pointer" }}
+        />
       )}
     </>
   );
