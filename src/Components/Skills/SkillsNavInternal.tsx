@@ -1,5 +1,9 @@
 import * as React from "react";
-import { SkillCategories, SkillsNavHeader } from "./Skills.Constants";
+import {
+  SkillCategories,
+  SkillCategory,
+  SkillsNavHeader,
+} from "./Skills.Constants";
 import { InPageNavigation, OnItemClickHandler } from "../CommonComponents";
 import { SkillNavComponent } from "./Skills.types";
 
@@ -7,7 +11,7 @@ const SkillsNavInternal: SkillNavComponent = (props) => {
   const onItemClickHandler: OnItemClickHandler = React.useCallback(
     (index, items) => {
       const skillCategory = items[index];
-      props?.onSkillCategoryChange?.(skillCategory);
+      props?.onSkillCategoryChange?.(skillCategory as SkillCategory);
     },
     []
   );

@@ -1,12 +1,12 @@
 import * as React from "react";
 import { ProgressBarComponent } from "../CommonComponents";
-import { SkillsCollection } from "./Skills.Constants";
+import { SkillCategory, SkillsCollection } from "./Skills.Constants";
 import { SkillsContainerProps } from "./Skills.types";
 
 const SkillsContainer: React.FC<SkillsContainerProps> = (props) => {
   const skills = props.category
     ? SkillsCollection.filter((skill) =>
-        skill.categories.includes(props.category)
+        skill.categories.includes(props.category as SkillCategory)
       )
     : SkillsCollection;
   return (

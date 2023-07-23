@@ -29,8 +29,92 @@ export const SkillsCollection: Skills = [
     categories: [SkillCategory.ProgrammingLanguages],
   },
   {
+    skillDescription: "C",
+    skillProficiency: 95,
+    categories: [SkillCategory.ProgrammingLanguages],
+  },
+  {
+    skillDescription: "C++",
+    skillProficiency: 95,
+    categories: [SkillCategory.ProgrammingLanguages],
+  },
+  {
+    skillDescription: "C#",
+    skillProficiency: 95,
+    categories: [SkillCategory.ProgrammingLanguages],
+  },
+  {
+    skillDescription: "Rust",
+    skillProficiency: 80,
+    categories: [SkillCategory.ProgrammingLanguages],
+  },
+  {
+    skillDescription: "TypeScript",
+    skillProficiency: 95,
+    categories: [
+      SkillCategory.ProgrammingLanguages,
+      SkillCategory.WebDevelopment,
+    ],
+  },
+  {
+    skillDescription: "JavaScript",
+    skillProficiency: 95,
+    categories: [
+      SkillCategory.ProgrammingLanguages,
+      SkillCategory.WebDevelopment,
+    ],
+  },
+  {
+    skillDescription: "React",
+    skillProficiency: 90,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "NodeJS",
+    skillProficiency: 95,
+    categories: [
+      SkillCategory.ProgrammingLanguages,
+      SkillCategory.WebDevelopment,
+    ],
+  },
+  {
+    skillDescription: "Angular",
+    skillProficiency: 80,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "Redux",
+    skillProficiency: 90,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
     skillDescription: "HTML",
     skillProficiency: 100,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "CSS",
+    skillProficiency: 90,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "Bootstrap",
+    skillProficiency: 75,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "Django",
+    skillProficiency: 95,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "Flask",
+    skillProficiency: 70,
+    categories: [SkillCategory.WebDevelopment],
+  },
+  {
+    skillDescription: "ASP.NET Core",
+    skillProficiency: 80,
     categories: [SkillCategory.WebDevelopment],
   },
 ].sort((s1, s2) => -(s1.skillProficiency - s2.skillProficiency));

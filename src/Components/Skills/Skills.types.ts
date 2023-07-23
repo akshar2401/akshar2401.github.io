@@ -1,7 +1,9 @@
+import { SkillCategory } from "./Skills.Constants";
+
 export type Skill = {
   skillDescription: string;
   skillProficiency: number;
-  categories: string[];
+  categories: SkillCategory[];
 };
 export type Skills = ReadonlyArray<Skill>;
 
@@ -12,7 +14,7 @@ export type SkillsContainerProps = {
 export type SkillsContainerComponent = React.FC<SkillsContainerProps>;
 
 export type SkillsNavProps = {
-  onSkillCategoryChange?: (category: string) => void;
+  onSkillCategoryChange?: (category: SkillCategory) => void;
 };
 
 export type SkillNavComponent = React.FC<SkillsNavProps>;

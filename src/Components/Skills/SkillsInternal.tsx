@@ -9,7 +9,7 @@ import { SkillCategory } from "./Skills.Constants";
 
 const SkillsInternal: React.FC<any> = () => {
   const [currentCategory, setCurrentCategory] = React.useState(
-    SkillCategory.ProgrammingLanguages as string
+    SkillCategory.ProgrammingLanguages
   );
 
   return (
