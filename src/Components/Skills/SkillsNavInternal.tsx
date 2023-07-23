@@ -1,20 +1,22 @@
 import * as React from "react";
 import { SkillCategories, SkillsNavHeader } from "./Skills.Constants";
 import { InPageNavigation, OnItemClickHandler } from "../CommonComponents";
+import { SkillNavComponent } from "./Skills.types";
 
-// not implemented yet, but would be shortly
-// for now a dummy function
-const OnItemClickHandlerImpl: OnItemClickHandler = (index, items) => {
-  console.log(items[index]);
-};
-
-const SkillsNavInternal: React.FC<any> = () => {
+const SkillsNavInternal: SkillNavComponent = (props) => {
+  const onItemClickHandler: OnItemClickHandler = React.useCallback(
+    (index, items) => {
+      const skillCategory = items[index];
+      props?.onSkillCategoryChange?.(skillCategory);
+    },
+    []
+  );
   return (
     <InPageNavigation
       header={SkillsNavHeader}
       items={SkillCategories}
       useExpandCollapse={true}
-      onItemClick={OnItemClickHandlerImpl}
+      onItemClick={onItemClickHandler}
     />
   );
 };

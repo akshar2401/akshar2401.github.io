@@ -94,13 +94,13 @@ function getExpandCollapseIcon(
     <>
       {isExpanded ? (
         <i
-          className="fa fa-sloid fa-chevron-up"
+          className="fa fa-solid fa-chevron-up"
           onClick={toggleExpanded}
           style={{ cursor: "pointer" }}
         />
       ) : (
         <i
-          className="fa fa-sloid fa-chevron-down"
+          className="fa fa-solid fa-chevron-down"
           onClick={toggleExpanded}
           style={{ cursor: "pointer" }}
         />
