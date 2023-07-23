@@ -10,4 +10,6 @@ export default class Constants {
   static readonly LinkedinURL =
     "https://www.linkedin.com/in/akshar-patel-378071122/";
   static readonly GithubURL = "https://github.com/akshar2401";
+  static readonly SourceCodeURL =
+    "https://github.com/akshar2401/akshar2401.github.io";
 }

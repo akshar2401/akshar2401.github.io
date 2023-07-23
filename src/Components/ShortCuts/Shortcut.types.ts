@@ -5,6 +5,7 @@ export enum ShortcutType {
   Linkedin = "Linkedin",
   Github = "Github",
   Resume = "Resume",
+  SourceCode = "Source Code",
 }
 
 export const ShortcutsLookup = {
@@ -25,6 +26,12 @@ export const ShortcutsLookup = {
     url: Constants.ResumeUrl,
     description: "Resume",
     route: "/resume",
+  },
+  [ShortcutType.SourceCode]: {
+    type: ShortcutType.SourceCode,
+    url: Constants.SourceCodeURL,
+    description: "Source Code",
+    route: "/source",
   },
 };
 
