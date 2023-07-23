@@ -1,8 +1,7 @@
 import * as React from "react";
 import Resume from "../../../Resume.pdf";
-import Utilities from "../../Utilities";
+import { Utilities, Constants } from "../../Misc";
 import { Button } from "../../../node_modules/react-bootstrap/esm/index";
-import Constants from "../../Constants";
 
 const downloadResume = async () => {
   await Utilities.downloadFile(Resume, Constants.ResumeFileName);

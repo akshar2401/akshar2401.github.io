@@ -3,7 +3,7 @@ import Col from "../../../node_modules/react-bootstrap/esm/Col";
 import Container from "../../../node_modules/react-bootstrap/esm/Container";
 import Row from "../../../node_modules/react-bootstrap/esm/Row";
 import { IconLink } from "./Footer.types";
-import Constants from "../../Constants";
+import { Constants } from "../../Misc";
 
 const styles = {
   "--bs-border-opacity": ".15",

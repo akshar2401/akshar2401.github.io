@@ -10,6 +10,7 @@ export type OnItemClickHandler = (
 export interface InPageNavigationProps {
   items: InPageNavigationItems;
   header: string;
+  useExpandCollapse?: boolean;
   onItemClick?: OnItemClickHandler;
 }
 

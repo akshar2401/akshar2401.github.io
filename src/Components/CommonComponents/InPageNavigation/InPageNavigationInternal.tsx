@@ -1,36 +1,144 @@
 import * as React from "react";
 import Card from "react-bootstrap/esm/Card";
 import { ListGroup } from "react-bootstrap";
-import { InPageNavigationInternalComponent } from "./InPageNavigation.types";
+import {
+  InPageNavigationInternalComponent,
+  InPageNavigationItem,
+  InPageNavigationProps,
+} from "./InPageNavigation.types";
+import { BreakpointsEventManager } from "../../../Misc";
 
 const InPageNavigationInternal: InPageNavigationInternalComponent = (props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const header = props.header;
-  const items = props.items;
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const toggleExpanded = React.useCallback(() => {
+    setIsExpanded((isExpanded) => !isExpanded);
+  }, []);
+
+  const collapse = React.useCallback(() => {
+    if (!props?.useExpandCollapse) {
+      return;
+    }
+    if (
+      !BreakpointsEventManager.matchesSmall() &&
+      !BreakpointsEventManager.matchesExtraSmall()
+    ) {
+      return;
+    }
+    setIsExpanded(false);
+  }, []);
+
+  const expand = React.useCallback(() => {
+    if (!props?.useExpandCollapse) {
+      return;
+    }
+    if (
+      BreakpointsEventManager.matchesSmall() ||
+      BreakpointsEventManager.matchesExtraSmall()
+    ) {
+      return;
+    }
+
+    setIsExpanded(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (
+      BreakpointsEventManager.matchesExtraSmall() ||
+      BreakpointsEventManager.matchesSmall()
+    ) {
+      collapse();
+    } else {
+      expand();
+    }
+    const subs = [
+      BreakpointsEventManager.addListenerForExtraSmall(collapse),
+      BreakpointsEventManager.addListenerForSmall(collapse),
+      BreakpointsEventManager.addListenerForMedium(expand),
+      BreakpointsEventManager.addListenerForLarge(expand),
+      BreakpointsEventManager.addListenerForExtraLarge(expand),
+      BreakpointsEventManager.addListenerFor2ExtraLarge(expand),
+    ];
+    return () => {
+      console.log("disposing");
+      subs.forEach((sub) => sub.dispose());
+    };
+  }, []);
 
   return (
     <>
       <Card bg="dark" text="light" style={{ width: "100%" }}>
-        <Card.Header>{header}</Card.Header>
-        <ListGroup variant="flush">
-          {items.map((category, index) => (
-            <ListGroup.Item
-              variant="secondary"
-              onClick={() => {
-                setActiveIndex(index);
-                props.onItemClick?.(index, items);
-              }}
-              active={index === activeIndex}
-              action
-              key={category}
-            >
-              {category}
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
+        <Card.Header
+          className="d-flex align-items-center justify-content-between"
+          style={{ cursor: "pointer" }}
+        >
+          {props.header}
+          {getExpandCollapseIcon(props, isExpanded, toggleExpanded)}
+        </Card.Header>
+        {getNavItems(props, isExpanded, activeIndex, setActiveIndex)}
       </Card>
     </>
   );
 };
+
+function getExpandCollapseIcon(
+  props: InPageNavigationProps,
+  isExpanded: boolean,
+  toggleExpanded: () => void
+) {
+  if (!props?.useExpandCollapse) {
+    return null;
+  }
+
+  return (
+    <>
+      {isExpanded ? (
+        <i
+          className="fa fa-sloid fa-chevron-up"
+          onClick={toggleExpanded}
+          style={{ cursor: "pointer" }}
+        />
+      ) : (
+        <i className="fa fa-sloid fa-chevron-down" onClick={toggleExpanded} />
+      )}
+    </>
+  );
+}
+
+function getNavItems(
+  props: InPageNavigationProps,
+  isExpanded: boolean,
+  activeNavItemIndex: number,
+  setActiveIndex: (index: number) => void
+) {
+  let items: [InPageNavigationItem, number][] = props.items.map(
+    (item, index) => [item, index]
+  );
+
+  if (props?.useExpandCollapse && !isExpanded) {
+    items = items.filter((item) => item[1] === activeNavItemIndex);
+  }
+  return (
+    <>
+      <ListGroup variant="flush">
+        {items.map((item) => (
+          <ListGroup.Item
+            variant="secondary"
+            onClick={() => {
+              props.onItemClick?.(item[1], props.items);
+              setActiveIndex(item[1]);
+            }}
+            active={item[1] === activeNavItemIndex}
+            action
+            key={item[0]}
+          >
+            {item[0]}
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </>
+  );
+}
 
 export default InPageNavigationInternal;

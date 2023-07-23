@@ -1,3 +1,7 @@
+export interface IDisposable {
+  dispose(): void;
+}
+
 export default class Utilities {
   static async downloadFile(fileUrl: string, fileName?: string) {
     const fileContent = await fetch(fileUrl);
@@ -10,5 +14,13 @@ export default class Utilities {
     document.body.appendChild(linkHTMLElement);
     linkHTMLElement.click();
     document.body.removeChild(linkHTMLElement);
+  }
+
+  static createGenericDisposable(onDispose: () => void): IDisposable {
+    return {
+      dispose() {
+        onDispose();
+      },
+    };
   }
 }

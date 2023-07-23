@@ -2,7 +2,7 @@ import * as React from "react";
 import Container from "../../../node_modules/react-bootstrap/esm/Container";
 import Row from "../../../node_modules/react-bootstrap/esm/Row";
 import Col from "../../../node_modules/react-bootstrap/esm/Col";
-import Constants from "../../Constants";
+import { Constants } from "../../Misc";
 import ImagesForCarousel from "./ImagesForCarousel";
 import { ImagesCarousel } from "../ImagesCarousel";
 

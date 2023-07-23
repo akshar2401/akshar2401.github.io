@@ -13,6 +13,7 @@ const SkillsNavInternal: React.FC<any> = () => {
     <InPageNavigation
       header={SkillsNavHeader}
       items={SkillCategories}
+      useExpandCollapse={true}
       onItemClick={OnItemClickHandlerImpl}
     />
   );
