@@ -6,9 +6,19 @@ export enum ShortcutType {
   Github = "Github",
   Resume = "Resume",
   SourceCode = "Source Code",
+  Email = "Email",
 }
 
-export const ShortcutsLookup = {
+type ShortcutsLookupType = {
+  [key in ShortcutType]: {
+    type: ShortcutType;
+    url: string;
+    description: string;
+    route: string;
+  };
+};
+
+export const ShortcutsLookup: ShortcutsLookupType = {
   [ShortcutType.Linkedin]: {
     type: ShortcutType.Linkedin,
     url: Constants.LinkedinURL,
@@ -32,6 +42,12 @@ export const ShortcutsLookup = {
     url: Constants.SourceCodeURL,
     description: "Source Code",
     route: "/source",
+  },
+  [ShortcutType.Email]: {
+    type: ShortcutType.Email,
+    url: Constants.EmailURL,
+    description: "Email Client on your device",
+    route: "/email",
   },
 };
 

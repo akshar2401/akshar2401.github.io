@@ -16,7 +16,7 @@ const paddingIconColStyles = {
 const icons: IconLink[] = [
   {
     icon: "fa fa-envelope",
-    link: `mailto:${Constants.Email}`,
+    link: Constants.EmailURL,
   },
   {
     icon: "fa fa-linkedin",

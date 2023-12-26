@@ -7,7 +7,7 @@ import { DefaultPage } from "../DefaultComponents";
 import { Navigation } from "../Navigation";
 import { Footer } from "../Footer";
 import { LazyLoad } from "../CommonComponents";
-import { Shortcut, Shortcuts } from "../ShortCuts";
+import { Shortcut, Shortcuts } from "../Shortcuts";
 
 const PortfolioRootInternal: React.FC<any> = () => {
   return (

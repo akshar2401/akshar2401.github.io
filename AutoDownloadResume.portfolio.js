@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[26],{829:(e,t,n)=>{n.r(t),n.d(t,{default:()=>u});var c=n(7294),r=n(727),s=n(5704);const u=e=>{const t=s.Ai[e.shortcutType];return c.useEffect((()=>{window.location.replace(t.url)}),[]),c.createElement(r.z,null,"Opening ",t.description,"...")}}}]);

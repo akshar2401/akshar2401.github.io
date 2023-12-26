@@ -75,7 +75,7 @@ const AboutInternal: React.FC<any> = () => {
             </a>{" "}
             or by reaching out to me at{" "}
             <a
-              href={"mailto:" + Constants.Email}
+              href={Constants.EmailURL}
               target="_blank"
               title="Email me"
             >

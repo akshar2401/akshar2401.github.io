@@ -4,7 +4,7 @@ import { ShortcutComponent } from "./Shortcut.types";
 
 const LazyShortcut = React.lazy(
   () =>
-    import(/* webpackChunkName: "AutoDownloadResume" */ "./ShortcutInternal")
+    import(/* webpackChunkName: "Shortcut" */ "./ShortcutInternal")
 );
 
 export const Shortcut: ShortcutComponent = (props) => {
