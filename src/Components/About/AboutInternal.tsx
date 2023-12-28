@@ -66,7 +66,7 @@ const AboutInternal: React.FC<any> = () => {
             <a
               href={Constants.LinkedinURL}
               target="_blank"
-              title="Link to my linkedin"
+              title={Constants.VisitLinkedinAction}
             >
               <span className="fa-stack">
                 <i className="fa fa-square fa-stack-2x text-light" />
@@ -77,7 +77,7 @@ const AboutInternal: React.FC<any> = () => {
             <a
               href={Constants.EmailURL}
               target="_blank"
-              title="Email me"
+              title={Constants.EmailMeAction}
             >
               <span className="fa-stack">
                 <i className="fa fa-square fa-stack-2x text-light" />

@@ -13,4 +13,8 @@ export default class Constants {
     "https://github.com/akshar2401/akshar2401.github.io";
   private static readonly Email = "aksharpatel144@gmail.com";
   static readonly EmailURL = `mailto:${this.Email}`;
+  static readonly EmailMeAction = "Email me";
+  static readonly VisitLinkedinAction = "Visit my Linkedin Profile";
+  static readonly VisitGithubAction = "Visit my Github Profile";
+  static readonly ViewResumeAction = "View my Resume";
 }

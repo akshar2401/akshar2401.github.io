@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DefaultPageContent } from "../DefaultComponents";
-import { ShortcutComponent, ShortcutsLookup } from "./Shortcut.types";
+import { ShortcutComponent, ShortcutsLookup } from "./Shortcut.types"
 
 const ShortcutInternal: ShortcutComponent = (props) => {
   const shortcut = ShortcutsLookup[props.shortcutType];

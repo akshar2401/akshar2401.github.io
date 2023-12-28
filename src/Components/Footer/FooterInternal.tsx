@@ -17,12 +17,15 @@ const icons: IconLink[] = [
   {
     icon: "fa fa-envelope",
     link: Constants.EmailURL,
+    title: Constants.EmailMeAction,
   },
   {
     icon: "fa fa-linkedin",
     link: Constants.LinkedinURL,
+    title: Constants.VisitLinkedinAction,
   },
-  { icon: "fa fa-github", link: Constants.GithubURL },
+  { icon: "fa fa-github", link: Constants.GithubURL, title: Constants.VisitGithubAction},
+  {icon: 'fa fa-file', link: Constants.ResumeUrl, title: Constants.ViewResumeAction}
 ];
 
 const FooterInternal: React.FC<any> = () => {
@@ -36,7 +39,7 @@ const FooterInternal: React.FC<any> = () => {
         <Row className="justify-content-center my-auto">
           {icons.map((icon) => (
             <Col xs="auto" style={paddingIconColStyles} key={icon.icon}>
-              <a href={icon.link} target="_blank" rel="noopener noreferrer">
+              <a href={icon.link} target="_blank" rel="noopener noreferrer" title={icon.title}>
                 <span className="fa-stack fa-lg" style={{ cursor: "pointer" }}>
                   <i className="fa fa-circle fa-stack-2x text-light" />
                   <i className={icon.icon + " fa-stack-1x text-dark"} />
