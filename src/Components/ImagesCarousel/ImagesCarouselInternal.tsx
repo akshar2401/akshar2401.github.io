@@ -14,7 +14,7 @@ const ImagesCarouselInternal: ImagesCarouselInternalComponentType = (props) => {
     <Carousel
       activeIndex={activeIndex}
       onSelect={setActiveIndex}
-      style={Object.assign({}, { height: "400px" }, props.imageStyles || {})}
+      style={Object.assign({}, { height: "500px" }, props.imageStyles || {})}
     >
       {props.images.map((image) => {
         return (

@@ -1,4 +1,4 @@
-import Resume from "../../Resume.pdf";
+import Resume from "../../Resumes/2025/Nov05/ResumeGeneral2025.pdf";
 
 export default class Constants {
   static readonly PortfolioRootDivID = "portfolioRoot";
